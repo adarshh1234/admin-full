@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useToast } from '../../context/ToastContext';
+import { useToast } from '../../hooks/useToast';
+import { Button } from '../common/Button';
 
 export function SettingsPage() {
   const { showToast } = useToast();
@@ -86,13 +87,14 @@ export function SettingsPage() {
       </div>
 
       <div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-        <button className="btn-primary" onClick={handleSave}>
+        <Button variant="primary" onClick={handleSave}>
           <i className="fas fa-save" /> Save Settings
-        </button>
-        <button className="btn-outline" onClick={handleReset}>
+        </Button>
+        <Button variant="outline" onClick={handleReset}>
           Reset Default
-        </button>
+        </Button>
       </div>
     </div>
   );
 }
+

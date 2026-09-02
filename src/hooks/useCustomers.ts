@@ -10,7 +10,6 @@ export function useCustomers() {
 
   useEffect(() => {
     let isMounted = true;
-    setIsLoading(true);
     customersService
       .getCustomers()
       .then((data) => {
@@ -26,6 +25,7 @@ export function useCustomers() {
       isMounted = false;
     };
   }, []);
+
 
   const filteredCustomers = useMemo(() => {
     const normalized = query.trim().toLowerCase();

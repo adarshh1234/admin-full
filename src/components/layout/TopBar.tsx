@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import { Button } from '../common/Button';
 
 interface TopBarProps {
   onHamburgerClick: () => void;
@@ -12,9 +13,9 @@ export const TopBar = forwardRef<HTMLButtonElement, TopBarProps>(function TopBar
   return (
     <div className="topbar">
       <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-        <button className="hamburger" id="hamburgerBtn" ref={hamburgerRef} onClick={onHamburgerClick}>
+        <Button className="hamburger" id="hamburgerBtn" ref={hamburgerRef} onClick={onHamburgerClick}>
           <i className="fas fa-bars" />
-        </button>
+        </Button>
         <div className="greeting">
           <h1 id="pageTitle">
             Welcome back, <span>labeeb.eee_candidate</span>
@@ -26,9 +27,9 @@ export const TopBar = forwardRef<HTMLButtonElement, TopBarProps>(function TopBar
       </div>
 
       <div className="actions">
-        <button className="btn-primary" id="globalActionBtn" onClick={onGlobalAction}>
+        <Button variant="primary" id="globalActionBtn" onClick={onGlobalAction}>
           <i className="fas fa-plus" /> New
-        </button>
+        </Button>
         <div className="topbar-user-avatar" title="labeeb.eee_candidate">
           <i className="fas fa-user" />
         </div>
@@ -36,3 +37,4 @@ export const TopBar = forwardRef<HTMLButtonElement, TopBarProps>(function TopBar
     </div>
   );
 });
+

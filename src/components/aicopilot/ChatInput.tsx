@@ -1,3 +1,6 @@
+import { Button } from '../common/Button';
+import { Input } from '../common/Input';
+
 interface ChatInputProps {
   value: string;
   onChange: (value: string) => void;
@@ -8,7 +11,7 @@ interface ChatInputProps {
 export function ChatInput({ value, onChange, onSend, disabled }: ChatInputProps) {
   return (
     <div className="ai-input">
-      <input
+      <Input
         type="text"
         id="aiInput"
         placeholder="Ask Copilot to draft, summarize, or suggest..."
@@ -18,9 +21,10 @@ export function ChatInput({ value, onChange, onSend, disabled }: ChatInputProps)
           if (event.key === 'Enter') onSend();
         }}
       />
-      <button id="aiSendBtn" onClick={onSend} disabled={disabled}>
+      <Button id="aiSendBtn" onClick={onSend} disabled={disabled}>
         <i className={disabled ? 'fas fa-circle-notch fa-spin' : 'fas fa-paper-plane'} />
-      </button>
+      </Button>
     </div>
   );
 }
+

@@ -1,5 +1,6 @@
 import type { ComplianceItemData } from '../../types/compliance';
 import { ToggleSwitch } from '../common/ToggleSwitch';
+import { Button } from '../common/Button';
 
 interface ComplianceItemRowProps {
   item: ComplianceItemData;
@@ -25,11 +26,16 @@ export function ComplianceItemRow({ item, onToggle, onConfigure }: ComplianceIte
       )}
       {item.control === 'button' && (
         <span>
-          <button className="btn-outline btn-sm" onClick={() => onConfigure(item)}>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => onConfigure(item)}
+          >
             {item.buttonLabel}
-          </button>
+          </Button>
         </span>
       )}
     </div>
   );
 }
+

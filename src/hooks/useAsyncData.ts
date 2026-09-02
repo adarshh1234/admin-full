@@ -22,11 +22,12 @@ export function useAsyncData<T>(
 
   useEffect(() => {
     let isMounted = true;
-    setIsLoading(true);
-    setError(null);
     fetcher()
       .then((result) => {
-        if (isMounted) setData(result);
+        if (isMounted) {
+          setData(result);
+          setError(null);
+        }
       })
       .catch(() => {
         if (isMounted) setError(errorMessage);
@@ -42,3 +43,4 @@ export function useAsyncData<T>(
 
   return { data, isLoading, error };
 }
+

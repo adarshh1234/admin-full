@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 import { formatCurrentDate } from '../../utils/formatDate';
 import type { GlobalActionConfig } from '../../types/navigation';
+import { Button } from '../common/Button';
 
 interface CuremasoTopBarProps {
   pageTitle: string;
@@ -16,9 +17,9 @@ export const CuremasoTopBar = forwardRef<HTMLButtonElement, CuremasoTopBarProps>
   return (
     <div className="topbar crm-topbar">
       <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-        <button className="hamburger" id="crmHamburgerBtn" ref={hamburgerRef} onClick={onHamburgerClick}>
+        <Button className="hamburger" id="crmHamburgerBtn" ref={hamburgerRef} onClick={onHamburgerClick}>
           <i className="fas fa-bars" />
-        </button>
+        </Button>
         <div className="greeting">
           <h1 id="crmPageTitle">{pageTitle}</h1>
           <p id="crmPageSubtitle">
@@ -31,10 +32,11 @@ export const CuremasoTopBar = forwardRef<HTMLButtonElement, CuremasoTopBarProps>
           <i className="fas fa-bell" />
           <span className="badge">4</span>
         </div>
-        <button className="btn-primary" id="crmGlobalActionBtn" onClick={onGlobalAction}>
+        <Button variant="primary" id="crmGlobalActionBtn" onClick={onGlobalAction}>
           <i className={globalAction.icon} /> {globalAction.label}
-        </button>
+        </Button>
       </div>
     </div>
   );
 });
+

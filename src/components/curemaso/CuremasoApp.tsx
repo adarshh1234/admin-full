@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { StatsRow } from '../layout/StatsRow';
 import { PAGE_COMPONENTS } from '../pages';
 import { Loader } from '../common/Loader';
+import { Button } from '../common/Button';
 import { useNavigation } from '../../hooks/useNavigation';
 import { NAV_SECTIONS } from '../../data/navigationData';
 
@@ -20,7 +21,7 @@ export function CuremasoApp() {
         {crmTabs.map((item) => {
           const isActive = activePage === item.pageId;
           return (
-            <button
+            <Button
               key={item.pageId}
               type="button"
               className={`tab-btn${isActive ? ' active' : ''}`}
@@ -43,10 +44,11 @@ export function CuremasoApp() {
                   {item.badge}
                 </span>
               )}
-            </button>
+            </Button>
           );
         })}
       </div>
+
 
       <StatsRow />
 

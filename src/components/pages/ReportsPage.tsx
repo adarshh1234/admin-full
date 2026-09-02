@@ -1,4 +1,5 @@
-import { useToast } from '../../context/ToastContext';
+import { useToast } from '../../hooks/useToast';
+import { Button } from '../common/Button';
 
 interface ReportsPageProps {
   onNavigateDashboard?: () => void;
@@ -47,22 +48,23 @@ export function ReportsPage({ onNavigateDashboard }: ReportsPageProps) {
       </div>
 
       <div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-        <button
-          className="btn-outline"
+        <Button
+          variant="outline"
           onClick={() => showToast('Exporting PDF report…', 'info')}
         >
           <i className="fas fa-file-pdf" /> Export PDF
-        </button>
-        <button
-          className="btn-outline"
+        </Button>
+        <Button
+          variant="outline"
           onClick={() => showToast('Exporting Excel report…', 'info')}
         >
           <i className="fas fa-file-excel" /> Export Excel
-        </button>
-        <button className="btn-primary" onClick={onNavigateDashboard}>
+        </Button>
+        <Button variant="primary" onClick={onNavigateDashboard}>
           <i className="fas fa-chart-line" /> View Full Dashboard
-        </button>
+        </Button>
       </div>
     </div>
   );
 }
+

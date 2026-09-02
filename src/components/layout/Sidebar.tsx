@@ -1,5 +1,7 @@
 import { forwardRef, useState } from 'react';
 import type { ModuleItem } from '../../types/module';
+import { Button } from '../common/Button';
+import { Input } from '../common/Input';
 
 interface SidebarProps {
   activeModuleId: number;
@@ -51,19 +53,19 @@ export const Sidebar = forwardRef<HTMLElement, SidebarProps>(function Sidebar(
         <div className="logo">
           <span className="logo-text">E.</span>
           <small>ERP</small>
-          <button
+          <Button
             className="collapse-toggle"
             onClick={onToggleCollapse}
             title={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
           >
             <i className="fas fa-bars" />
-          </button>
+          </Button>
         </div>
 
         <div className="sidebar-divider" />
 
         <div className="search-box">
-          <input
+          <Input
             type="text"
             id="sidebarSearch"
             placeholder={collapsed ? '' : 'Filter modules...'}
@@ -131,14 +133,14 @@ export const Sidebar = forwardRef<HTMLElement, SidebarProps>(function Sidebar(
                 </div>
                 <div className="role">ERP · Full Navigation</div>
               </div>
-              <button
+              <Button
                 type="button"
                 className="user-card-menu-btn"
                 onClick={() => setUserMenuOpen((prev) => !prev)}
                 title="Account options"
               >
                 <i className="fas fa-ellipsis-v" />
-              </button>
+              </Button>
 
               {userMenuOpen && (
                 <div className="user-card-dropdown">
@@ -147,7 +149,7 @@ export const Sidebar = forwardRef<HTMLElement, SidebarProps>(function Sidebar(
                     <div className="user-dropdown-email">labeeb@curemaso.com</div>
                   </div>
                   <div className="user-dropdown-divider" />
-                  <button
+                  <Button
                     type="button"
                     className="user-dropdown-item signout-btn"
                     onClick={() => {
@@ -159,7 +161,7 @@ export const Sidebar = forwardRef<HTMLElement, SidebarProps>(function Sidebar(
                   >
                     <i className="fas fa-sign-out-alt" />
                     <span>Sign Out</span>
-                  </button>
+                  </Button>
                 </div>
               )}
             </>
@@ -169,3 +171,4 @@ export const Sidebar = forwardRef<HTMLElement, SidebarProps>(function Sidebar(
     </div>
   );
 });
+

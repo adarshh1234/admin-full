@@ -1,14 +1,34 @@
+import { lazy, Suspense } from 'react';
 import { Layout } from './components/layout/Layout';
-import { ErpDashboardPage } from './components/pages/ErpDashboardPage';
-import { ProfilePage } from './components/pages/ProfilePage';
-import { CalendarPage } from './components/pages/CalendarPage';
-import { ReportsPage } from './components/pages/ReportsPage';
-import { SettingsPage } from './components/pages/SettingsPage';
-import { ModuleDetailPage } from './components/pages/ModuleDetailPage';
-import { CuremasoApp } from './components/curemaso/CuremasoApp';
 import { ToastContainer } from './components/common/ToastContainer';
-import { ToastProvider, useToast } from './context/ToastContext';
+import { Loader } from './components/common/Loader';
+import { ToastProvider } from './context/ToastContext';
+import { useToast } from './hooks/useToast';
 import { useErpNavigation } from './hooks/useErpNavigation';
+
+const ErpDashboardPage = lazy(() =>
+  import('./components/pages/ErpDashboardPage').then((m) => ({ default: m.ErpDashboardPage })),
+);
+const ProfilePage = lazy(() =>
+  import('./components/pages/ProfilePage').then((m) => ({ default: m.ProfilePage })),
+);
+const CalendarPage = lazy(() =>
+  import('./components/pages/CalendarPage').then((m) => ({ default: m.CalendarPage })),
+);
+const ReportsPage = lazy(() =>
+  import('./components/pages/ReportsPage').then((m) => ({ default: m.ReportsPage })),
+);
+const SettingsPage = lazy(() =>
+  import('./components/pages/SettingsPage').then((m) => ({ default: m.SettingsPage })),
+);
+const ModuleDetailPage = lazy(() =>
+  import('./components/pages/ModuleDetailPage').then((m) => ({ default: m.ModuleDetailPage })),
+);
+const CuremasoApp = lazy(() =>
+  import('./components/curemaso/CuremasoApp').then((m) => ({ default: m.CuremasoApp })),
+);
+
+
 
 function AppShell() {
   const {
@@ -57,8 +77,11 @@ function AppShell() {
       onGlobalAction={handleGlobalAction}
     >
       <div className="page active" key={activeModuleId}>
-        {renderPageContent()}
+        <Suspense fallback={<Loader label="Loading module…" />}>
+          {renderPageContent()}
+        </Suspense>
       </div>
+
     </Layout>
   );
 }

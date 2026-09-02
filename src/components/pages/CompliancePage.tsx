@@ -1,4 +1,5 @@
-import { useToast } from '../../context/ToastContext';
+import { useToast } from '../../hooks/useToast';
+
 import { useCompliance } from '../../hooks/useCompliance';
 import { ComplianceList } from '../compliance/ComplianceList';
 import { Loader } from '../common/Loader';

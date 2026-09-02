@@ -1,4 +1,5 @@
 import type { InboxFilterOption } from '../../types/inbox';
+import { Button } from '../common/Button';
 
 interface InboxFiltersProps {
   filters: InboxFilterOption[];
@@ -10,14 +11,15 @@ export function InboxFilters({ filters, activeFilter, onSelect }: InboxFiltersPr
   return (
     <div className="inbox-filters">
       {filters.map((filter) => (
-        <button
+        <Button
           key={filter.id}
           className={`filter-btn${filter.id === activeFilter ? ' active' : ''}`}
           onClick={() => onSelect(filter.id)}
         >
           {filter.icon && <i className={filter.icon} />} {filter.label}
-        </button>
+        </Button>
       ))}
     </div>
   );
 }
+

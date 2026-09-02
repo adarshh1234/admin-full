@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { useToast } from '../../context/ToastContext';
+import { useToast } from '../../hooks/useToast';
+import { Button } from '../common/Button';
+import { Input } from '../common/Input';
 import type { PersonalDetails } from '../../types/module';
 
 export function ProfilePage() {
@@ -60,7 +62,7 @@ export function ProfilePage() {
               <label style={{ fontSize: 12, fontWeight: 400, color: '#6b7a8f', marginBottom: 2, display: 'block' }}>
                 First Name *
               </label>
-              <input
+              <Input
                 className="form-control"
                 value={form.firstName}
                 onChange={(e) => handleChange('firstName', e.target.value)}
@@ -70,7 +72,7 @@ export function ProfilePage() {
               <label style={{ fontSize: 12, fontWeight: 400, color: '#6b7a8f', marginBottom: 2, display: 'block' }}>
                 Last Name *
               </label>
-              <input
+              <Input
                 className="form-control"
                 value={form.lastName}
                 onChange={(e) => handleChange('lastName', e.target.value)}
@@ -84,7 +86,7 @@ export function ProfilePage() {
             <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#0b1a33', marginBottom: 4 }}>
               Date of Birth
             </label>
-            <input
+            <Input
               className="form-control"
               value={form.dob}
               placeholder="dd/mm/yyyy"
@@ -111,7 +113,7 @@ export function ProfilePage() {
           <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#0b1a33', marginBottom: 4 }}>
             Nationality
           </label>
-          <input
+          <Input
             className="form-control"
             value={form.nationality}
             placeholder="e.g. Indian, British"
@@ -143,12 +145,12 @@ export function ProfilePage() {
             borderTop: '1px solid #e9edf4',
           }}
         >
-          <button type="submit" className="btn-primary">
+          <Button type="submit" variant="primary">
             <i className="fas fa-save" /> Save Personal Details
-          </button>
-          <button type="button" className="btn-outline" onClick={handleCancel}>
+          </Button>
+          <Button type="button" variant="outline" onClick={handleCancel}>
             Cancel
-          </button>
+          </Button>
         </div>
       </form>
     </div>

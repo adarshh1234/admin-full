@@ -1,4 +1,5 @@
 import type { Integration } from '../../types/integration';
+import { Button } from '../common/Button';
 
 export function IntegrationCard({
   integration,
@@ -17,9 +18,15 @@ export function IntegrationCard({
         <i className={integration.status === 'connected' ? 'fas fa-check-circle' : 'fas fa-times-circle'} />{' '}
         {integration.status === 'connected' ? 'Connected' : 'Disconnected'}
       </div>
-      <button className="btn-outline btn-sm" style={{ marginTop: 6 }} onClick={() => onAction(integration)}>
+      <Button
+        variant="outline"
+        size="sm"
+        style={{ marginTop: 6 }}
+        onClick={() => onAction(integration)}
+      >
         {integration.actionLabel}
-      </button>
+      </Button>
     </div>
   );
 }
+
