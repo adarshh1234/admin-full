@@ -27,6 +27,9 @@ const ModuleDetailPage = lazy(() =>
 const CuremasoApp = lazy(() =>
   import('./components/curemaso/CuremasoApp').then((m) => ({ default: m.CuremasoApp })),
 );
+const UserManagementPage = lazy(() =>
+  import('./components/pages/UserManagementPage').then((m) => ({ default: m.UserManagementPage })),
+);
 
 
 
@@ -59,6 +62,8 @@ function AppShell() {
         return <ReportsPage onNavigateDashboard={() => navigateTo(1)} />;
       case 5:
         return <SettingsPage />;
+      case 9:
+        return <UserManagementPage />;
       case 10:
         return <CuremasoApp />;
       default:

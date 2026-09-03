@@ -9,7 +9,7 @@ export const ALL_MODULES: ModuleItem[] = [
   { id: 6, name: 'MIS', category: 'core', icon: 'fa-chart-pie' },
   { id: 7, name: 'CMG', category: 'core', icon: 'fa-layer-group' },
   { id: 8, name: 'Daily Sales', category: 'sales', icon: 'fa-chart-line' },
-  { id: 9, name: 'Accounting', category: 'core', icon: 'fa-coins' },
+  { id: 9, name: 'User Management', category: 'core', icon: 'fa-users-cog' },
   { id: 10, name: 'CRM', category: 'sales', icon: 'fa-address-book' },
   { id: 11, name: 'HRM', category: 'people', icon: 'fa-user-tie' },
   { id: 12, name: 'Marketing', category: 'sales', icon: 'fa-bullhorn' },

@@ -26,7 +26,7 @@ const CHAT_SUBMENU = [
 ];
 
 export function RightSidebar({ onOpenPanel, activePanelTab, isPanelOpen }: RightSidebarProps) {
-  const [aiDropdownOpen, setAiDropdownOpen] = useState<boolean>(true);
+  const [aiDropdownOpen, setAiDropdownOpen] = useState<boolean>(false);
   const [chatDropdownOpen, setChatDropdownOpen] = useState<boolean>(false);
 
   return (
