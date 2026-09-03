@@ -96,9 +96,6 @@ export const Sidebar = forwardRef<HTMLElement, SidebarProps>(function Sidebar(
             </a>
           ))}
 
-          {/* Menu Divider */}
-          <div className="menu-divider" />
-
           {/* Filtered Non-special Modules */}
           {filteredModules.length === 0 ? (
             !collapsed && (

@@ -1,0 +1,498 @@
+/* Scoped CSS for MIS Dashboard Module - Native Admin Design System Integration */
+
+.mis-module {
+  /* Admin Design System Tokens */
+  --admin-bg: #f5f7fb;
+  --admin-card-bg: #ffffff;
+  --admin-text-main: #0b1a33;
+  --admin-text-muted: #6b7a8f;
+  --admin-text-subtle: #8e9bb5;
+  --admin-border: #e9edf4;
+  --admin-border-light: #f0f4fe;
+  --admin-primary: #2563eb;
+  --admin-primary-hover: #1d4ed8;
+  --admin-primary-light: #eef2ff;
+  --admin-primary-dark: #1e3a8a;
+  
+  --admin-success: #16a34a;
+  --admin-success-bg: #d1fae5;
+  --admin-success-text: #065f46;
+  
+  --admin-danger: #dc2626;
+  --admin-danger-bg: #fee2e2;
+  --admin-danger-text: #991b1b;
+  
+  --admin-warning: #d97706;
+  --admin-warning-bg: #fef3c7;
+  --admin-warning-text: #92400e;
+
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--admin-text-main);
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.mis-module * {
+  box-sizing: border-box;
+}
+
+/* Page Top Header Bar */
+.mis-module .mis-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.mis-module .mis-page-title h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--admin-text-main);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mis-module .mis-page-title h1 i {
+  color: var(--admin-primary);
+  font-size: 22px;
+}
+
+.mis-module .mis-page-subtitle {
+  font-size: 14px;
+  color: var(--admin-text-muted);
+  margin-top: 4px;
+}
+
+.mis-module .mis-action-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.mis-module .mis-btn-action {
+  background: var(--admin-card-bg);
+  color: #3d4a5f;
+  border: 1px solid var(--admin-border);
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.mis-module .mis-btn-action:hover {
+  background: var(--admin-primary-light);
+  color: var(--admin-primary-dark);
+  border-color: #cbd5e1;
+}
+
+.mis-module .mis-btn-action i {
+  color: var(--admin-primary);
+  font-size: 14px;
+}
+
+.mis-module .mis-btn-action-primary {
+  background: var(--admin-primary);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.mis-module .mis-btn-action-primary:hover {
+  background: var(--admin-primary-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.mis-module .mis-btn-action-primary i {
+  color: #ffffff;
+}
+
+/* KPI Cards Grid - Matching Admin .stats */
+.mis-module .mis-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.mis-module .mis-kpi-card {
+  background: var(--admin-card-bg);
+  border-radius: 16px;
+  padding: 20px 22px;
+  border: 1px solid var(--admin-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.15s ease;
+}
+
+.mis-module .mis-kpi-card-interactive {
+  cursor: pointer;
+}
+
+.mis-module .mis-kpi-card-interactive:hover {
+  border-color: #c7d2fe;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+  transform: translateY(-2px);
+}
+
+.mis-module .mis-kpi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mis-module .mis-kpi-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--admin-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mis-module .mis-kpi-icon {
+  font-size: 15px;
+  color: var(--admin-primary);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--admin-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mis-module .mis-kpi-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--admin-text-main);
+  margin-top: 8px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.mis-module .mis-kpi-sub {
+  font-size: 12.5px;
+  color: var(--admin-text-muted);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Tabs Bar - Matching Admin .tab-nav */
+.mis-module .mis-tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+  background: var(--admin-card-bg);
+  padding: 6px;
+  border-radius: 16px;
+  border: 1px solid var(--admin-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.mis-module .mis-tab-btn {
+  padding: 10px 18px;
+  border: none;
+  background: transparent;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--admin-text-muted);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mis-module .mis-tab-btn i {
+  font-size: 14px;
+  color: var(--admin-text-subtle);
+  transition: color 0.2s ease;
+}
+
+.mis-module .mis-tab-btn:hover {
+  background: var(--admin-primary-light);
+  color: #1a2b4a;
+}
+
+.mis-module .mis-tab-btn:hover i {
+  color: var(--admin-primary);
+}
+
+.mis-module .mis-tab-btn-active {
+  background: var(--admin-primary-dark) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(30, 58, 138, 0.25);
+}
+
+.mis-module .mis-tab-btn-active i {
+  color: #93c5fd !important;
+}
+
+/* Content Panels - Matching Admin .panel */
+.mis-module .mis-panel {
+  background: var(--admin-card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--admin-border);
+  padding: 22px 24px 26px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  margin-bottom: 24px;
+}
+
+.mis-module .mis-section-title {
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--admin-text-main);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mis-module .mis-section-desc {
+  font-size: 13.5px;
+  color: var(--admin-text-muted);
+  margin-bottom: 14px;
+}
+
+.mis-module .mis-formula-note {
+  background: #f8faff;
+  border: 1px solid var(--admin-border-light);
+  border-left: 4px solid var(--admin-primary);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  color: #475569;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.mis-module .mis-chart-container {
+  position: relative;
+  height: 290px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+/* Tables - Matching Admin Table Specs */
+.mis-module .mis-table-responsive {
+  overflow-x: auto;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--admin-border);
+}
+
+.mis-module table.mis-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.mis-module table.mis-table th {
+  background: #f8faff;
+  color: #3d4a5f;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 1.5px solid var(--admin-border);
+  padding: 12px 14px;
+  text-align: left;
+}
+
+.mis-module table.mis-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--admin-border-light);
+  vertical-align: middle;
+  color: var(--admin-text-main);
+}
+
+.mis-module table.mis-table tr:hover td {
+  background: #f8faff;
+}
+
+.mis-module table.mis-table tfoot td {
+  font-weight: 700;
+  background: #f1f5f9;
+  color: var(--admin-text-main);
+  border-top: 2px solid #cbd5e1;
+}
+
+.mis-module table.mis-table input[type="number"] {
+  width: 95px;
+  padding: 5px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13px;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.mis-module table.mis-table input[type="number"]:focus {
+  outline: none;
+  border-color: var(--admin-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.mis-module .mis-computed-cell {
+  font-weight: 600;
+  color: var(--admin-primary-dark);
+}
+
+.mis-module .mis-below-target {
+  background-color: var(--admin-danger-bg) !important;
+  color: var(--admin-danger-text) !important;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.mis-module .mis-above-target {
+  background-color: var(--admin-success-bg) !important;
+  color: var(--admin-success-text) !important;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.mis-module .mis-text-muted {
+  color: var(--admin-text-subtle);
+  font-size: 11.5px;
+}
+
+/* Badges / Tags */
+.mis-module .mis-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+.mis-module .mis-tag-green  { background: var(--admin-success-bg); color: var(--admin-success-text); }
+.mis-module .mis-tag-amber  { background: var(--admin-warning-bg); color: var(--admin-warning-text); }
+.mis-module .mis-tag-red    { background: var(--admin-danger-bg);  color: var(--admin-danger-text); }
+.mis-module .mis-tag-blue   { background: var(--admin-primary-light); color: var(--admin-primary-dark); }
+
+/* Internal Grids & Card Boxes */
+.mis-module .mis-internal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.mis-module .mis-internal-box {
+  background: #f8faff;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--admin-border);
+}
+
+.mis-module .mis-internal-box h3 {
+  margin-top: 0;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--admin-text-main);
+  margin-bottom: 12px;
+}
+
+.mis-module .mis-internal-box p {
+  font-size: 13px;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+/* UI Elements: Loader & Toast */
+.mis-module .mis-loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.mis-module .mis-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3.5px solid var(--admin-border);
+  border-top-color: var(--admin-primary);
+  border-radius: 50%;
+  animation: mis-spin 0.8s infinite linear;
+}
+
+@keyframes mis-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mis-module .mis-loader-label {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--admin-text-muted);
+  font-weight: 500;
+}
+
+.mis-module .mis-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mis-module .mis-toast-item {
+  min-width: 260px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15);
+}
+
+.mis-module .mis-toast-info { background: #0284c7; }
+.mis-module .mis-toast-success { background: #16a34a; }
+.mis-module .mis-toast-error { background: #dc2626; }
+.mis-module .mis-toast-warning { background: #d97706; }
+
+.mis-module .mis-toast-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+.mis-module .mis-footer {
+  text-align: center;
+  font-size: 12px;
+  color: var(--admin-text-subtle);
+  padding: 20px 0 10px;
+  margin-top: 10px;
+  border-top: 1px solid var(--admin-border-light);
+}

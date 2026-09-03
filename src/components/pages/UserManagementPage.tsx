@@ -6,7 +6,7 @@ import { Input } from '../common/Input';
 // Reused for the Account tab — same data the old Accounting module used
 const ACCOUNT_MODULE = {
   id: 9,
-  name: 'Account',
+  name: 'Acmaso',
   category: 'core',
   icon: 'fa-coins',
 };
@@ -183,7 +183,7 @@ export function UserManagementPage({ initialTab = 'user-management' }: UserManag
           className={`tab-btn${activeTab === 'account' ? ' active' : ''}`}
           onClick={() => setActiveTab('account')}
         >
-          <i className="fas fa-coins" /> Account
+          <i className="fas fa-coins" /> Acmaso
         </Button>
       </div>
 

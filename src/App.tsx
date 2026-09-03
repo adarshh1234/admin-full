@@ -33,6 +33,10 @@ const UserManagementPage = lazy(() =>
 
 
 
+const MISModule = lazy(() =>
+  import('./components/mis/components/MISModule')
+);
+
 function AppShell() {
   const {
     activeModuleId,
@@ -62,6 +66,8 @@ function AppShell() {
         return <ReportsPage onNavigateDashboard={() => navigateTo(1)} />;
       case 5:
         return <SettingsPage />;
+      case 6:
+        return <MISModule />;
       case 9:
         return <UserManagementPage />;
       case 10:
