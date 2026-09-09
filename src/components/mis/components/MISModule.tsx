@@ -27,6 +27,8 @@ const NetProfitMarginPage = lazy(() => import('../pages/blank/NetProfitMarginPag
 const RecurringExpensesPage = lazy(() => import('../pages/blank/RecurringExpensesPage'));
 const MarketingROIPage = lazy(() => import('../pages/blank/MarketingROIPage'));
 const HighPotentialMarketsPage = lazy(() => import('../pages/blank/HighPotentialMarketsPage'));
+const DailyActiveUsersPage = lazy(() => import('../pages/blank/DailyActiveUsersPage'));
+const MonthlyActiveUsersPage = lazy(() => import('../pages/blank/MonthlyActiveUsersPage'));
 
 export default function MISModule() {
   return (
@@ -45,9 +47,8 @@ export default function MISModule() {
                 <Route path="/recurring-expenses" element={<RecurringExpensesPage />} />
                 <Route path="/marketing-roi" element={<MarketingROIPage />} />
                 <Route path="/high-potential-markets" element={<HighPotentialMarketsPage />} />
-                {/* KPI cards for DAU/MAU navigate to these routes: redirect back to root */}
-                <Route path="/daily-active-users" element={<MISDashboardMain />} />
-                <Route path="/monthly-active-users" element={<MISDashboardMain />} />
+                <Route path="/daily-active-users" element={<DailyActiveUsersPage />} />
+                <Route path="/monthly-active-users" element={<MonthlyActiveUsersPage />} />
               </Routes>
             </Suspense>
           </MemoryRouter>
