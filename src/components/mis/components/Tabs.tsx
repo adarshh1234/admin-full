@@ -15,6 +15,11 @@ export const TAB_DEFS: TabDef[] = [
   { id: 'tab-marketing', label: 'Marketing & Leads', icon: 'fa-bullhorn' },
   { id: 'tab-expansion', label: 'Market Expansion', icon: 'fa-globe-americas' },
   { id: 'tab-ai', label: 'AI Suggestions', icon: 'fa-robot' },
+  { id: 'tab-cashflow', label: 'Cash Flow', icon: 'fa-money-bill-wave' },
+  { id: 'tab-rois', label: 'ROIs', icon: 'fa-percentage' },
+  { id: 'tab-assets', label: 'Assets', icon: 'fa-boxes' },
+  { id: 'tab-liquidity', label: 'Liquidity', icon: 'fa-hand-holding-usd' },
+  { id: 'tab-revenue', label: 'Revenue', icon: 'fa-chart-pie' },
 ];
 
 interface TabsProps {

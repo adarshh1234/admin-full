@@ -15,6 +15,11 @@ const AccountsPage = lazy(() => import('../pages/AccountsPage'));
 const MarketingPage = lazy(() => import('../pages/MarketingPage'));
 const ExpansionPage = lazy(() => import('../pages/ExpansionPage'));
 const AIPage = lazy(() => import('../pages/AIPage'));
+const CashFlowPage = lazy(() => import('../pages/CashFlowPage'));
+const RoisPage = lazy(() => import('../pages/RoisPage'));
+const AssetsPage = lazy(() => import('../pages/AssetsPage'));
+const LiquidityPage = lazy(() => import('../pages/LiquidityPage'));
+const RevenuePage = lazy(() => import('../pages/RevenuePage'));
 
 const PANEL_MAP: Record<string, ComponentType> = {
   'tab-daily': DailyPage,
@@ -27,6 +32,11 @@ const PANEL_MAP: Record<string, ComponentType> = {
   'tab-marketing': MarketingPage,
   'tab-expansion': ExpansionPage,
   'tab-ai': AIPage,
+  'tab-cashflow': CashFlowPage,
+  'tab-rois': RoisPage,
+  'tab-assets': AssetsPage,
+  'tab-liquidity': LiquidityPage,
+  'tab-revenue': RevenuePage,
 };
 
 export default function MISDashboardMain() {

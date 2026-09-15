@@ -36,6 +36,15 @@ const UserManagementPage = lazy(() =>
 const MISModule = lazy(() =>
   import('./components/mis/components/MISModule')
 );
+const CmsPage = lazy(() =>
+  import('./components/cms/CmsPage').then((m) => ({ default: m.CmsPage }))
+);
+const MarketingPage = lazy(() =>
+  import('./components/pages/MarketingPage').then((m) => ({ default: m.MarketingPage }))
+);
+const HrmDataPage = lazy(() =>
+  import('./components/pages/HrmDataPage').then((m) => ({ default: m.HrmDataPage }))
+);
 
 function AppShell() {
   const {
@@ -68,10 +77,16 @@ function AppShell() {
         return <SettingsPage />;
       case 6:
         return <MISModule />;
+      case 7:
+        return <CmsPage />;
       case 9:
         return <UserManagementPage />;
       case 10:
         return <CuremasoApp />;
+      case 12:
+        return <MarketingPage />;
+      case 49:
+        return <HrmDataPage />;
       default:
         return <ModuleDetailPage key={activeModule.id} module={activeModule} />;
     }
