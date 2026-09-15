@@ -1,6 +1,8 @@
 import type { LandingPageCmsData } from '../types/cms';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE = (import.meta.env.VITE_API_URL || 'http://localhost:5000')
+  .replace(/\/api\/?$/, '')
+  .replace(/\/+$/, '');
 
 const ADMIN_HEADERS = {
   'Content-Type': 'application/json',
@@ -11,7 +13,7 @@ const ADMIN_HEADERS = {
 
 export const cmsService = {
   async getCmsData(mode: 'draft' | 'published' = 'draft'): Promise<LandingPageCmsData> {
-    const res = await fetch(`${API_BASE_URL}/cms/landing-page?mode=${mode}`, {
+    const res = await fetch(`${API_BASE}/api/cms/landing-page?mode=${mode}`, {
       headers: {
         'Authorization': 'Bearer admin-token',
         'x-admin-key': 'admin',
@@ -25,7 +27,7 @@ export const cmsService = {
   },
 
   async saveDraft(data: LandingPageCmsData): Promise<LandingPageCmsData> {
-    const res = await fetch(`${API_BASE_URL}/cms/landing-page`, {
+    const res = await fetch(`${API_BASE}/api/cms/landing-page`, {
       method: 'PUT',
       headers: ADMIN_HEADERS,
       body: JSON.stringify(data),
@@ -39,7 +41,7 @@ export const cmsService = {
   },
 
   async publishContent(): Promise<LandingPageCmsData> {
-    const res = await fetch(`${API_BASE_URL}/cms/landing-page/publish`, {
+    const res = await fetch(`${API_BASE}/api/cms/landing-page/publish`, {
       method: 'POST',
       headers: ADMIN_HEADERS,
     });
@@ -55,7 +57,7 @@ export const cmsService = {
     const formData = new FormData();
     formData.append('file', file);
 
-    const res = await fetch(`${API_BASE_URL}/cms/upload`, {
+    const res = await fetch(`${API_BASE}/api/cms/upload`, {
       method: 'POST',
       headers: {
         'Authorization': 'Bearer admin-token',
@@ -70,7 +72,7 @@ export const cmsService = {
   },
 
   async resetToDefaults(): Promise<LandingPageCmsData> {
-    const res = await fetch(`${API_BASE_URL}/cms/reset`, {
+    const res = await fetch(`${API_BASE}/api/cms/reset`, {
       method: 'POST',
       headers: ADMIN_HEADERS,
     });
@@ -81,3 +83,4 @@ export const cmsService = {
     return json.data;
   },
 };
+
